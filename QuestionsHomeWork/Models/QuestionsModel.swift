@@ -34,9 +34,9 @@ struct Questions {
         Questions(title: "На сколько вы любите гулять?",
                   answers: [
                     Answer(question: "Ненавижу", animal: .cat),
-                    Answer(question: "Обожаю", animal: .dog),
                     Answer(question: "Нервничаю", animal: .rabbit),
                     Answer(question: "Не замечаю", animal: .parrot),
+                    Answer(question: "Обожаю", animal: .dog)
                   ],
                   typeOfAnswer: .ranged)
         ]
