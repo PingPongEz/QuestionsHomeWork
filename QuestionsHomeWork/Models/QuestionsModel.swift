@@ -31,7 +31,7 @@ struct Questions {
                     Answer(question: "Кричать", animal: .parrot),
                   ],
                   typeOfAnswer: .multiple),
-        Questions(title: "На сколько вы любите гулять?",
+        Questions(title: "На сколько вы любите кататься на машине?",
                   answers: [
                     Answer(question: "Ненавижу", animal: .cat),
                     Answer(question: "Нервничаю", animal: .rabbit),

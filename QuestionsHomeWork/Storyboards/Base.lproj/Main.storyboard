@@ -82,15 +82,18 @@
             </objects>
             <point key="canvasLocation" x="-113" y="27"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="tya-Iz-lAd">
             <objects>
-                <navigationController id="5kq-Z6-I06" sceneMemberID="viewController">
+                <navigationController id="5kq-Z6-I06" customClass="NavigationViewController" customModule="QuestionsHomeWork" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="9sj-F4-mOk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="fB0-FR-FuV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L40-1D-VTK">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="kik-OJ-6aw" kind="relationship" relationship="rootViewController" id="yqt-Lu-xWh"/>
                     </connections>
@@ -99,7 +102,7 @@
             </objects>
             <point key="canvasLocation" x="698" y="26"/>
         </scene>
-        <!--Вопрос №-->
+        <!--Questions View Controller-->
         <scene sceneID="pXP-Ui-mqi">
             <objects>
                 <viewController id="kik-OJ-6aw" customClass="QuestionsViewController" customModule="QuestionsHomeWork" customModuleProvider="target" sceneMemberID="viewController">
@@ -282,7 +285,7 @@
                             <constraint firstItem="ps3-ys-mUd" firstAttribute="leading" secondItem="wkW-kf-Mq6" secondAttribute="leading" id="yjY-ed-1S2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Вопрос №" id="mSj-gs-rME"/>
+                    <navigationItem key="navigationItem" id="mSj-gs-rME"/>
                     <connections>
                         <outlet property="multipleAnswerQuestion" destination="FgH-WT-MnX" id="yly-gN-dmL"/>
                         <outlet property="progressBar" destination="ps3-ys-mUd" id="4sp-8B-27f"/>
@@ -322,6 +325,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="LWx-BZ-cdq"/>
+                    <connections>
+                        <outlet property="navigationBar" destination="LWx-BZ-cdq" id="LZz-ax-McC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBA-GW-ndT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

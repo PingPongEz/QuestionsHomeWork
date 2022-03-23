@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14A4345C27EBD029006F3B27 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A4345B27EBD029006F3B27 /* NavigationViewController.swift */; };
 		14C31BAB27EB26A100189FD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C31BAA27EB26A100189FD9 /* AppDelegate.swift */; };
 		14C31BAD27EB26A100189FD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C31BAC27EB26A100189FD9 /* SceneDelegate.swift */; };
 		14C31BAF27EB26A100189FD9 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C31BAE27EB26A100189FD9 /* StartViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14A4345B27EBD029006F3B27 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		14C31BA727EB26A100189FD9 /* QuestionsHomeWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuestionsHomeWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C31BAA27EB26A100189FD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14C31BAC27EB26A100189FD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				14C31BAE27EB26A100189FD9 /* StartViewController.swift */,
 				14C31BC127EB385900189FD9 /* QuestionsViewController.swift */,
 				14C31BC327EB387000189FD9 /* ResultViewController.swift */,
+				14A4345B27EBD029006F3B27 /* NavigationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				14C31BAB27EB26A100189FD9 /* AppDelegate.swift in Sources */,
 				14C31BC727EB39E400189FD9 /* QuestionsModel.swift in Sources */,
 				14C31BC227EB385900189FD9 /* QuestionsViewController.swift in Sources */,
+				14A4345C27EBD029006F3B27 /* NavigationViewController.swift in Sources */,
 				14C31BAD27EB26A100189FD9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

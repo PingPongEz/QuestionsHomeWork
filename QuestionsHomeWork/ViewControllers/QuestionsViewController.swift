@@ -46,6 +46,7 @@ class QuestionsViewController: UIViewController {
         
         super.viewDidLoad()
         updateUI()
+    
     }
     
     
@@ -76,6 +77,7 @@ class QuestionsViewController: UIViewController {
         nextQuestion()
         print(answersChosen)
     }
+    
 }
 
 //MARK: Private methods
@@ -136,4 +138,5 @@ extension QuestionsViewController {
         performSegue(withIdentifier: "results", sender: nil)
     }
 }
+
 
