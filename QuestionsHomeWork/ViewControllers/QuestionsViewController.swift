@@ -7,6 +7,9 @@
 
 import UIKit
 
+
+var currentWinner: Animal?
+
 class QuestionsViewController: UIViewController {
     
     @IBOutlet var questionLabel: UILabel!
@@ -31,8 +34,6 @@ class QuestionsViewController: UIViewController {
             rangedSlider.value = answerRange / 2
         }
     }
-    
-    var currentWinner: Animal = .none
     
     private let questions = Questions.getQuestions()
     private var currentQuestion: Questions {
@@ -137,7 +138,7 @@ extension QuestionsViewController {
             updateUI()
             return
         }
-        
+        currentWinner = calculate(answers: answersChosen)
         performSegue(withIdentifier: "results", sender: nil)
     }
 }
@@ -176,7 +177,7 @@ extension QuestionsViewController {
                 } else {
                     dictionaryOfAnimals[.rabbit] = 1
                 }
-            default: return currentWinner
+            default: return currentWinner ?? .none
             }
         }
         
@@ -187,7 +188,7 @@ extension QuestionsViewController {
             }
         }
         
-        return currentWinner
+        return currentWinner ?? .none
         
     }
 }

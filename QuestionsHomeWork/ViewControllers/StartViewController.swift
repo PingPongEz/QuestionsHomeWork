@@ -14,6 +14,9 @@ class StartViewController: UIViewController {
         
     }
 
+    @IBAction func unwindToStart(_ unwindSegue: UIStoryboardSegue) {
+        currentWinner = nil
+    }
     
 }
 
