@@ -9,13 +9,15 @@ import UIKit
 
 class StartViewController: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
 
     @IBAction func unwindToStart(_ unwindSegue: UIStoryboardSegue) {
-        currentWinner = nil
+        guard let source = unwindSegue.source as? ResultViewController else { return }
+        source.winner = nil
     }
     
 }

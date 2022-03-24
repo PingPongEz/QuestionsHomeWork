@@ -8,7 +8,6 @@
 import UIKit
 
 
-var currentWinner: Animal?
 
 class QuestionsViewController: UIViewController {
     
@@ -42,6 +41,7 @@ class QuestionsViewController: UIViewController {
     private var currentAnswers: [Answer] {
         currentQuestion.answers
     }
+    private var currentWinner: Animal?
     private var currentQuestionIndex = 0
     private var answersChosen: [Answer] = []
     
@@ -50,6 +50,11 @@ class QuestionsViewController: UIViewController {
         super.viewDidLoad()
         updateUI()
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? ResultViewController else { return }
+        destination.winner = currentWinner
     }
     
     

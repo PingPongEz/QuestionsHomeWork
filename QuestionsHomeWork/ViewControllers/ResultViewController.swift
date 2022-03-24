@@ -14,12 +14,14 @@ class ResultViewController: UIViewController {
     
     @IBOutlet var navigationBar: UINavigationItem!
     
+    var winner: Animal?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationBar.hidesBackButton = true
         
-        switch currentWinner {
+        switch winner {
         case .cat:
             congratulationMessage.text = "Поздравляем! Вы - 🐱"
             descriptionMessage.text = "Вам абсолютно всё-равно на ваших хозяев. Главное чтобы вас хорошо кормили"
