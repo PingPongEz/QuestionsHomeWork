@@ -12,14 +12,14 @@ class ResultViewController: UIViewController {
     @IBOutlet var congratulationMessage: UILabel!
     @IBOutlet var descriptionMessage: UILabel!
     
-    @IBOutlet var navigationBar: UINavigationItem!
+//    @IBOutlet var navigationBar: UINavigationItem!
     
     var winner: Animal!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationBar.hidesBackButton = true
+        
+        navigationItem.hidesBackButton = true
         
         congratulationMessage.text = "Поздравляем! Вы - \(winner.rawValue)"
         descriptionMessage.text = AnimalDescription.getDescription(animal: winner)

@@ -82,10 +82,10 @@
             </objects>
             <point key="canvasLocation" x="-113" y="27"/>
         </scene>
-        <!--Navigation View Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="tya-Iz-lAd">
             <objects>
-                <navigationController id="5kq-Z6-I06" customClass="NavigationViewController" customModule="QuestionsHomeWork" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="5kq-Z6-I06" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="9sj-F4-mOk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="fB0-FR-FuV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
@@ -366,7 +366,6 @@
                     <connections>
                         <outlet property="congratulationMessage" destination="QfQ-qU-uRh" id="ARp-GH-Xxg"/>
                         <outlet property="descriptionMessage" destination="pda-lU-j9w" id="Tku-e7-2Zk"/>
-                        <outlet property="navigationBar" destination="LWx-BZ-cdq" id="LZz-ax-McC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBA-GW-ndT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
