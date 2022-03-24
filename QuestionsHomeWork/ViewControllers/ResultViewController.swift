@@ -24,7 +24,6 @@ class ResultViewController: UIViewController {
         congratulationMessage.text = "Поздравляем! Вы - \(winner.rawValue)"
         descriptionMessage.text = AnimalDescription.getDescription(animal: winner)
         
-        
     }
     
 }
