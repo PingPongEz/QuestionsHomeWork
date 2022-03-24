@@ -17,7 +17,7 @@ class StartViewController: UIViewController {
 
     @IBAction func unwindToStart(_ unwindSegue: UIStoryboardSegue) {
         guard let source = unwindSegue.source as? ResultViewController else { return }
-        source.winner = nil
+        source.currentAnimal = nil
     }
     
 }

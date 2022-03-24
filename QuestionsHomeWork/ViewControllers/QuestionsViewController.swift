@@ -54,7 +54,7 @@ class QuestionsViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? ResultViewController else { return }
-        destination.winner = currentWinner
+        destination.animals = answersChosen
     }
     
     
@@ -110,90 +110,54 @@ extension QuestionsViewController {
     }
     
     private func showCurrentQuestion(for type: AnswerType) {
+        
         switch type {
         case .single: showSingleAnswerView(with: currentAnswers)
         case .multiple: showMultipleAnswerView(with: currentAnswers)
         case .ranged: showRangedAnswerView(with: currentAnswers)
         }
+        
     }
     
     private func showSingleAnswerView(with answers: [Answer]) {
+        
         singleAnswerQuestion.isHidden = false
+        
         for (button, answer) in zip(singleAnswerButton, answers) {
             button.setTitle(answer.question, for: .normal)
         }
+        
     }
     
     private func showMultipleAnswerView(with answers: [Answer]) {
+        
         multipleAnswerQuestion.isHidden = false
+        
         for (title, answer) in zip(multipleAnswerLabels, answers) {
             title.text = answer.question
         }
+        
     }
     
     private func showRangedAnswerView(with answers: [Answer]) {
+        
         rangedAnswerQuestion.isHidden = false
+        
         rangedLabels.first?.text = answers.first?.question
         rangedLabels.last?.text = answers.last?.question
+        
     }
     
     private func nextQuestion() {
+        
         currentQuestionIndex += 1
+        
         if currentQuestionIndex < questions.count {
             updateUI()
             return
         }
-        currentWinner = calculate(answers: answersChosen)
+        
         performSegue(withIdentifier: "results", sender: nil)
     }
 }
 
-//MARK: Calculation methods
-extension QuestionsViewController {
-    private func calculate(answers: [Answer]) -> Animal {
-        
-        var maximumTimesUsedAnimal = 0
-        
-        var dictionaryOfAnimals: [Animal : Int] = [:]
-        
-        for answer in answers {
-            switch answer.animal {
-            case .dog:
-                if dictionaryOfAnimals[.dog] != nil {
-                    dictionaryOfAnimals[.dog]! += 1
-                } else {
-                    dictionaryOfAnimals[.dog] = 1
-                }
-            case .cat:
-                if dictionaryOfAnimals[.cat] != nil {
-                    dictionaryOfAnimals[.cat]! += 1
-                } else {
-                    dictionaryOfAnimals[.cat] = 1
-                }
-            case .parrot:
-                if dictionaryOfAnimals[.parrot] != nil {
-                    dictionaryOfAnimals[.parrot]! += 1
-                } else {
-                    dictionaryOfAnimals[.parrot] = 1
-                }
-            case .rabbit:
-                if dictionaryOfAnimals[.rabbit] != nil {
-                    dictionaryOfAnimals[.rabbit]! += 1
-                } else {
-                    dictionaryOfAnimals[.rabbit] = 1
-                }
-            default: return currentWinner ?? .none
-            }
-        }
-        
-        for (animal, count) in dictionaryOfAnimals {
-            if count > maximumTimesUsedAnimal {
-                maximumTimesUsedAnimal = count
-                currentWinner = animal
-            }
-        }
-        
-        return currentWinner ?? .none
-        
-    }
-}
