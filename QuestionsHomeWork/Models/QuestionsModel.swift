@@ -56,6 +56,7 @@ enum Animal {
     case cat
     case parrot
     case rabbit
+    case none
 }
 
 enum AnswerType {

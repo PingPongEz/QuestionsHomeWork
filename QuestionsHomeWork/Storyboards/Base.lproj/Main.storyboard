@@ -321,17 +321,54 @@
                     <view key="view" contentMode="scaleToFill" id="dmG-Nn-Sl6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="N5d-x0-ufX">
+                                <rect key="frame" x="16" y="161.5" width="288" height="245"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поздравляем! Вы - " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfQ-qU-uRh">
+                                        <rect key="frame" x="16" y="0.0" width="256" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pda-lU-j9w">
+                                        <rect key="frame" x="16" y="107" width="256" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCp-9b-TPd">
+                                        <rect key="frame" x="110.5" y="214" width="67" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pda-lU-j9w" firstAttribute="leading" secondItem="N5d-x0-ufX" secondAttribute="leading" constant="16" id="Icn-uO-YSC"/>
+                                    <constraint firstAttribute="trailing" secondItem="pda-lU-j9w" secondAttribute="trailing" constant="16" id="Wib-2l-f1T"/>
+                                    <constraint firstItem="QfQ-qU-uRh" firstAttribute="leading" secondItem="N5d-x0-ufX" secondAttribute="leading" constant="16" id="j1F-FW-Ig0"/>
+                                    <constraint firstAttribute="trailing" secondItem="QfQ-qU-uRh" secondAttribute="trailing" constant="16" id="njf-GF-srb"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dGM-ML-aWS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dGM-ML-aWS" firstAttribute="trailing" secondItem="N5d-x0-ufX" secondAttribute="trailing" constant="16" id="DZn-Oj-4jt"/>
+                            <constraint firstItem="N5d-x0-ufX" firstAttribute="leading" secondItem="dGM-ML-aWS" secondAttribute="leading" constant="16" id="g2T-5l-Kum"/>
+                            <constraint firstItem="N5d-x0-ufX" firstAttribute="centerY" secondItem="dmG-Nn-Sl6" secondAttribute="centerY" id="o0G-0v-sDS"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LWx-BZ-cdq"/>
                     <connections>
+                        <outlet property="congratulationMessage" destination="QfQ-qU-uRh" id="ARp-GH-Xxg"/>
+                        <outlet property="descriptionMessage" destination="pda-lU-j9w" id="Tku-e7-2Zk"/>
                         <outlet property="navigationBar" destination="LWx-BZ-cdq" id="LZz-ax-McC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBA-GW-ndT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2177" y="26"/>
+            <point key="canvasLocation" x="2176.875" y="25.35211267605634"/>
         </scene>
     </scenes>
     <resources>

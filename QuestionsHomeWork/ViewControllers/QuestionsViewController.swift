@@ -20,7 +20,7 @@ class QuestionsViewController: UIViewController {
     @IBOutlet var multipleAnswerQuestion: UIStackView!
     @IBOutlet var multipleAnswerLabels: [UILabel]!
     @IBOutlet var multipleAnswerSwitch: [UISwitch]!
-
+    
     @IBOutlet var rangedAnswerQuestion: UIStackView!
     @IBOutlet var rangedLabels: [UILabel]!
     @IBOutlet var rangedSlider: UISlider! {
@@ -31,6 +31,8 @@ class QuestionsViewController: UIViewController {
             rangedSlider.value = answerRange / 2
         }
     }
+    
+    var currentWinner: Animal = .none
     
     private let questions = Questions.getQuestions()
     private var currentQuestion: Questions {
@@ -46,7 +48,7 @@ class QuestionsViewController: UIViewController {
         
         super.viewDidLoad()
         updateUI()
-    
+        
     }
     
     
@@ -82,7 +84,7 @@ class QuestionsViewController: UIViewController {
 
 //MARK: Private methods
 extension QuestionsViewController {
-
+    
     private func updateUI() {
         for stack in [singleAnswerQuestion, multipleAnswerQuestion, rangedAnswerQuestion] {
             stack?.isHidden = true
@@ -135,8 +137,57 @@ extension QuestionsViewController {
             updateUI()
             return
         }
+        
         performSegue(withIdentifier: "results", sender: nil)
     }
 }
 
-
+//MARK: Calculation methods
+extension QuestionsViewController {
+    private func calculate(answers: [Answer]) -> Animal {
+        
+        var maximumTimesUsedAnimal = 0
+        
+        var dictionaryOfAnimals: [Animal : Int] = [:]
+        
+        for answer in answers {
+            switch answer.animal {
+            case .dog:
+                if dictionaryOfAnimals[.dog] != nil {
+                    dictionaryOfAnimals[.dog]! += 1
+                } else {
+                    dictionaryOfAnimals[.dog] = 1
+                }
+            case .cat:
+                if dictionaryOfAnimals[.cat] != nil {
+                    dictionaryOfAnimals[.cat]! += 1
+                } else {
+                    dictionaryOfAnimals[.cat] = 1
+                }
+            case .parrot:
+                if dictionaryOfAnimals[.parrot] != nil {
+                    dictionaryOfAnimals[.parrot]! += 1
+                } else {
+                    dictionaryOfAnimals[.parrot] = 1
+                }
+            case .rabbit:
+                if dictionaryOfAnimals[.rabbit] != nil {
+                    dictionaryOfAnimals[.rabbit]! += 1
+                } else {
+                    dictionaryOfAnimals[.rabbit] = 1
+                }
+            default: return currentWinner
+            }
+        }
+        
+        for (animal, count) in dictionaryOfAnimals {
+            if count > maximumTimesUsedAnimal {
+                maximumTimesUsedAnimal = count
+                currentWinner = animal
+            }
+        }
+        
+        return currentWinner
+        
+    }
+}
